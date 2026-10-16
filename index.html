@@ -3,7 +3,7 @@
   1. Upload 7423299_640-upscaled.png to Site Assets.
   2. Replace the --hero-image value below with its SharePoint file URL.
   3. The four SharePoint links are hard-coded below.
-  4. When used in an iframe Embed web part, set its height to 190px.
+  4. When used in an iframe Embed web part, set its height to 160px.
 -->
 <div class="bi-embed" style="--hero-image: url('./7423299_640-upscaled.png');">
   <section class="bi-hero" aria-labelledby="bi-title">
@@ -25,7 +25,7 @@
   /* Removes the default 8px browser margin when this file is hosted in an iframe. */
   html, body {
     width: 100%;
-    height: 190px;
+    height: 160px;
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -45,8 +45,8 @@
     width: 100%;
     /* Never compress below a usable editorial-card footprint. */
     min-width: 320px;
-    height: 190px;
-    min-height: 190px;
+    height: 160px;
+    min-height: 160px;
     /* Fill exactly the width allocated by the SharePoint embed or page column. */
     max-width: none;
     margin: 0;
@@ -57,9 +57,9 @@
 
   .bi-hero {
     position: relative;
-    /* 142px hero + 48px tab bar gives an exact 190px embed height. */
-    height: 142px;
-    min-height: 142px;
+    /* 116px hero + 44px tab bar gives an exact 160px embed height. */
+    height: 116px;
+    min-height: 116px;
     display: flex;
     align-items: center;
     color: var(--bi-white);
@@ -77,14 +77,14 @@
   }
 
   .bi-hero__content {
-    padding: 14px 18px;
+    padding: 10px 16px;
   }
 
   .bi-hero h1 {
-    margin: 0 0 14px;
+    margin: 0 0 10px;
     color: inherit;
     font-family: var(--bi-font);
-    font-size: clamp(1.25rem, 5.8vw, 1.6rem);
+    font-size: clamp(1.15rem, 5.2vw, 1.45rem);
     font-weight: 500;
     line-height: 1.12;
     letter-spacing: .004em;
@@ -95,8 +95,8 @@
     align-items: center;
     justify-content: center;
     min-width: 136px;
-    min-height: 34px;
-    padding: 7px 13px;
+    min-height: 30px;
+    padding: 6px 12px;
     border-radius: 4px;
     background: rgba(28, 6, 11, .84);
     color: var(--bi-white) !important;
@@ -120,7 +120,7 @@
 
   .bi-links a {
     display: flex;
-    min-height: 48px;
+    min-height: 44px;
     align-items: center;
     justify-content: center;
     padding: 8px 6px;
