@@ -1,0 +1,140 @@
+<!--
+  SharePoint responsive hero embed
+  1. Upload 7423299_640-upscaled.png to Site Assets.
+  2. Replace the --hero-image value below with its SharePoint file URL.
+  3. The four SharePoint links are hard-coded below.
+  4. When used in an iframe Embed web part, set its height to 219px.
+-->
+<div class="bi-embed" style="--hero-image: url('./7423299_640-upscaled.png');">
+  <section class="bi-hero" aria-labelledby="bi-title">
+    <div class="bi-hero__shade"></div>
+    <div class="bi-hero__content">
+      <h1 id="bi-title">Binswanger Intelligence</h1>
+      <a class="bi-primary-action" href="https://binswanger365.sharepoint.com/sites/BinswangerIntelligence" target="_blank" rel="noopener noreferrer">Visit Site</a>
+    </div>
+  </section>
+
+  <nav class="bi-links" aria-label="Binswanger Intelligence links">
+    <a href="https://binswanger365.sharepoint.com/sites/BinswangerIntelligence/SitePages/What-We-Do.aspx" target="_blank" rel="noopener noreferrer">What we do</a>
+    <a href="https://binswanger365.sharepoint.com/sites/BinswangerIntelligence/SitePages/Work-Product-Examples.aspx" target="_blank" rel="noopener noreferrer">Work Samples</a>
+    <a href="https://binswanger365.sharepoint.com/sites/BinswangerIntelligence/SitePages/Request-Research.aspx" target="_blank" rel="noopener noreferrer">Request Research</a>
+  </nav>
+</div>
+
+<style>
+  /* Removes the default 8px browser margin when this file is hosted in an iframe. */
+  html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: #f3f2f1;
+  }
+
+  /* Namespaced styles prevent collisions with the surrounding SharePoint page. */
+  .bi-embed, .bi-embed * {
+    box-sizing: border-box;
+  }
+
+  .bi-embed {
+    --bi-font: "Segoe UI", "Segoe UI Web (West European)", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+    --bi-text: #323130;
+    --bi-border: #edebe9;
+    --bi-white: #ffffff;
+    width: 100%;
+    /* Never compress below a usable editorial-card footprint. */
+    min-width: 320px;
+    min-height: 219px;
+    /* Fill exactly the width allocated by the SharePoint embed or page column. */
+    max-width: none;
+    margin: 0;
+    overflow: hidden;
+    background: var(--bi-white);
+    font-family: var(--bi-font);
+  }
+
+  .bi-hero {
+    position: relative;
+    /* 165px hero + 54px tab bar gives an exact 219px embed height. */
+    min-height: 165px;
+    display: flex;
+    align-items: center;
+    color: var(--bi-white);
+    background-image: var(--hero-image);
+    background-position: center 43%;
+    background-size: cover;
+    isolation: isolate;
+  }
+
+  .bi-hero__shade {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(90deg, rgba(16, 8, 15, .30), rgba(16, 8, 15, .08));
+  }
+
+  .bi-hero__content {
+    padding: 18px 20px;
+  }
+
+  .bi-hero h1 {
+    margin: 0 0 22px;
+    color: inherit;
+    font-family: var(--bi-font);
+    font-size: clamp(1.35rem, 6.6vw, 1.75rem);
+    font-weight: 500;
+    line-height: 1.12;
+    letter-spacing: .004em;
+  }
+
+  .bi-primary-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 136px;
+    min-height: 38px;
+    padding: 8px 15px;
+    border-radius: 4px;
+    background: rgba(28, 6, 11, .84);
+    color: var(--bi-white) !important;
+    font-size: .95rem;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+    transition: color .15s ease;
+  }
+
+  .bi-primary-action:hover { color: #d2d0ce !important; }
+  .bi-embed a[aria-disabled="true"] { cursor: default; opacity: .6; pointer-events: none; }
+  .bi-primary-action:focus-visible,
+  .bi-links a:focus-visible { outline: 3px solid #0078d4; outline-offset: -3px; }
+
+  .bi-links {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-top: 1px solid var(--bi-border);
+  }
+
+  .bi-links a {
+    display: flex;
+    min-height: 54px;
+    align-items: center;
+    justify-content: center;
+    justify-content: center;
+    padding: 8px 6px;
+    color: var(--bi-text) !important;
+    font-size: clamp(.7rem, 3.1vw, .9rem);
+    font-weight: 600;
+    line-height: 1.18;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color .15s ease, color .15s ease;
+  }
+
+  .bi-links a + a { border-left: 1px solid #c8c6c4; }
+  .bi-links a:hover { background: #f3f2f1; color: #0078d4 !important; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bi-primary-action, .bi-links a { transition: none; }
+  }
+</style>
+
